@@ -7,9 +7,9 @@ namespace TasksApi.Helpers
 {
     public class TokenHelper
     {
-        public const string Issuer = "http://codingsonata.com";
-        public const string Audience = "http://codingsonata.com";
-        public const string Secret = "p0GXO6VuVZLRPef0tyO9jCqK4uZufDa6LP4n8Gj+8hQPB30f94pFiECAnPeMi5N6VT3/uscoGH7+zJrv4AuuPg==";
+        public const string Issuer = "https://conprimo.se";
+        public const string Audience = "https://conprimo.se";
+        public const string Secret = "q0GXO6VuVZLRPef0tyO9jCqK4uZufDa6LP4n8Gj+4hQPB30f94pFiECAnPeMi5N6VT1/uscoGH7+zJrv4AuuPg==";
         public static async Task<string> GenerateAccessToken(int userId)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -26,7 +26,7 @@ namespace TasksApi.Helpers
                 Subject = claimsIdentity,
                 Issuer = Issuer,
                 Audience = Audience,
-                Expires = DateTime.Now.AddMinutes(15),
+                Expires = DateTime.Now.AddMinutes(10),
                 SigningCredentials = signingCredentials,
 
             };
